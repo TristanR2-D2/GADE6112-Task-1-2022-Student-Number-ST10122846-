@@ -1,0 +1,21 @@
+public class Hero extends Character {
+
+public Hero(int x, int y, int HP) {
+ super(x, y, HP, HP, 2, 'H');
+}
+
+public override ReturnMove(MovementEnum move) {
+ if (this.vision[(int)move] != null && this.vision[(int)move].type != TileType.Obstacle) {
+  return move;
+ } else {
+  return MovementEnum.None;
+ }
+}
+
+public override ToString() {
+ return "Player Stats:\n" +
+   "HP: " + this.HP + "/" + this.maxHP + "\n" +
+   "Damage: 2\n" +
+   "[" + this.x + ", " + this.y + "]";
+}
+}
