@@ -15,4 +15,41 @@ public Character(int x, int y, int HP, int maxHP, int damage, Tile[] vision) {
  this.damage = damage;
  this.vision = vision;
 }
+
+public virtual void Attack(Character target) {
+ target.HP -= this.damage;
+}
+
+public bool IsDead() {
+ return this.HP <= 0;
+}
+
+public virtual bool CheckRange(Character target) {
+ return this.DistanceTo(target) <= 1;
+}
+
+private int DistanceTo(target) {
+ return Math.Abs(this.x - target.x) + Math.Abs(this.y - target.y);
+}
+
+public void Move(MovementEnum move) {
+ switch (move) {
+ case Movement.Up:
+  this.y--;
+  break;
+ case Movement.Down:
+  this.y++;
+  break;
+ case Movement.Left:
+  this.x--;
+  break;
+ case Movement.Right:
+  this.x++;
+  break;
+ }
+}
+
+public abstract MovementEnum ReturnMove(MovementEnum move = 0);
+
+public abstract override ToString();
 }
