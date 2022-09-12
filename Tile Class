@@ -1,4 +1,4 @@
-public class Tile {
+public abstract class Tile {
 
 protected int x;
 protected int y;
