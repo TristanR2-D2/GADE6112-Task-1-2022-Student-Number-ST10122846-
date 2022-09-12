@@ -1,0 +1,15 @@
+public class SwampCreature extends Enemy {
+
+public SwampCreature(int x, int y) {
+ super(x, y, 1, 10, 'S');
+}
+
+public override ReturnMove() {
+ while (true) {
+  MovementEnum move = (MovementEnum)this.random.Next(4);
+  if (this.vision[(int)move] != null && this.vision[(int)move].type != TileType.Obstacle) {
+   return move;
+  }
+ }
+}
+}
