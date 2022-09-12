@@ -1,0 +1,13 @@
+public class Enemy extends Character {
+
+protected Random random;
+
+public Enemy(int x, int y, int damage, int HP, char symbol) {
+ super(x, y, HP, HP, damage, symbol);
+ this.random = new Random();
+}
+
+public override ToString() {
+ return "Enemy at [" + this.x + ", " + this.y + "] (" + this.damage + " DMG)";
+}
+}
