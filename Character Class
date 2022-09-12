@@ -1,0 +1,18 @@
+public class Character extends Tile {
+
+protected int HP;
+protected int maxHP;
+protected int damage;
+protected Tile[] vision;
+public enum Movement {
+ NoMovement, Up, Down, Left, Right
+}
+
+public Character(int x, int y, int HP, int maxHP, int damage, Tile[] vision) {
+ super(x, y);
+ this.HP = HP;
+ this.maxHP = maxHP;
+ this.damage = damage;
+ this.vision = vision;
+}
+}
